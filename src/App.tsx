@@ -1,15 +1,13 @@
 import Screen1 from "./screens/Screen1";
-import { ErrorBoundary } from "./utils";
+import GlobalErrorBoundary from "./utils/ErrorBondaryGlobal";
 
 function App() {
   return (
-    <>
-      <ErrorBoundary
-        fallBackComponent={<>Hubo un error al renderizar este componente</>}
-      >
+    <div>
+      <GlobalErrorBoundary fallBackComponent={<>Hubo un error global</>}>
         <Screen1 />
-      </ErrorBoundary>
-    </>
+      </GlobalErrorBoundary>
+    </div>
   );
 }
 
